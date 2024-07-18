@@ -1,0 +1,8 @@
+cache/
+*.pyc
+PKG-INFO
+requires.txt
+SOURCES.txt
+top_level.txt
+*.pth
+dependency_links.txt

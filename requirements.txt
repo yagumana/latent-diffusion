@@ -1,0 +1,16 @@
+albumentations
+opencv-python
+pudb
+imageio==2.9.0
+imageio-ffmpeg
+pytorch-lightning==1.4.2
+omegaconf==2.1.1
+test-tube>=0.7.5
+streamlit
+einops
+torch-fidelity
+transformers
+-e git+https://github.com/CompVis/taming-transformers.git
+-e git+https://github.com/openai/CLIP.git@main#egg=clip
+-e .
+torchmetrics==0.4.1

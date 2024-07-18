@@ -1,0 +1,25 @@
+# dockerファイルをビルドするためのコマンド, dockerfileが存在するディレクトリで実行
+docker build -t manato.yaguchi_latent .
+
+# dockerコンテナを起動するコマンド
+docker container run -v /home/manato.yaguchi/diffusion/latent-diffusion:/workspace --gpus "device=2" -it --name manato.yaguchi_latent manato.yaguchi_latent
+
+# すでに起動済みのdockerコンテナに対話シェルを通して操作するコマンド
+docker exec -it manato.yaguchi_latent /bin/bash
+
+# 起動中のDockerコンテナの一覧を表示
+docker ps
+
+# 起動中のDockerコンテナを停止
+docker stop manato.yaguchi_latent
+
+# Dockerコンテナを削除
+docker rm manato.yaguchi_latent
+
+# taming error
+pip install taming-transformers-rom1504
+pip install academictorrents
+
+
+## Training autoencoder models
+CUDA_VISIBLE_DEVICES=0 python main.py --base configs/autoencoder/autoencoder_kl_32x32x4.yaml -t --gpus 1    
